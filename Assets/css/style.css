@@ -19,3 +19,11 @@ footer {
 .fab {
     padding-right: 5px;
 }
+
+#run-search {
+    margin-right: 1%;
+}
+
+.btn-secondary {
+    background-color: #444444;
+}
