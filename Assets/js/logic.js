@@ -21,7 +21,7 @@ $("#run-search").click(function(event){
     var zip=$("#zip").val().trim();
     var city="Toronto";
     var Country="Canada";
-    var queryUrl= "https://api.openweathermap.org/data/2.5/weather?q="+city+","+Country+"&zip="+zip+"&appid="+apiKey;
+    var queryUrl= "https://api.openweathermap.org/data/2.5/forecast?q="+city+","+Country+"&zip="+zip+"&appid="+apiKey;
       
 
     $.ajax({
@@ -30,8 +30,8 @@ $("#run-search").click(function(event){
     }).then(function(response){
 
             console.log(queryUrl);
-            var temp=response.main.temp;               // temperture 
-            var weather=response.weather[0].main;       // weather: it is rainy, clear,..
+            var temp=response.list[0].main.temp;               // temperture 
+            var weather=response.list[0].weather[0].main;       // weather: it is rainy, clear,..
 
             console.log(temp);
             console.log(weather);
