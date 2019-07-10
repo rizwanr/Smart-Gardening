@@ -13,9 +13,9 @@ $(document).ready(function() {
   $('#run-search').on('click', function(event) {
     console.log('clicked');
     event.preventDefault();
-    var state = 'Ontario';
+    var state = $("#state").val().trim();
 
-    var country = 'Canada';
+    var state = $("#country").val().trim();
     console.log(country);
     var queryURL = `http://api.worldweatheronline.com/premium/v1/weather.ashx?key=6967235c37d54f578f004147190807&q=${state},%20${country}&format=json&num_of_days=14`;
 
