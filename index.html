@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Smart Gardening</title>
-
     <!-- Link to bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -30,8 +29,9 @@
     <!-- Link to jQuery -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Link to Javascript file -->
-    <script src="Assets/js/logic.js"></script>
+   
+   
+    
 </head>
 
 
@@ -109,11 +109,11 @@
                                 Please enter your shipping address.
                             </div>
                         </div>
-
+<!-- 
                         <div class="mb-3">
                             <label for="address2">Address 2 </span></label>
                             <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-                        </div>
+                        </div> -->
 
                         <div class="row">
                                                         
@@ -126,21 +126,21 @@
                             </div>
 
                             <div class="col-md-4 mb-3">
-                                <label for="state">State</label>
-                                <input type="text" class="form-control" id="state" placeholder="Ontario" required>
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" placeholder="Ontario" required>
                                 <div class="invalid-feedback">
                                     State code required.
                                 </div>
                             </div>
                             
                             
-                            <div class="col-md-3 mb-3">
+                            <!-- <div class="col-md-3 mb-3">
                                 <label for="zip">Zip</label>
                                 <input type="text" class="form-control" id="zip" placeholder="" required>
                                 <div class="invalid-feedback">
                                     Zip code required.
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Submit and Clear Buttons -->
                             <button class="btn btn-secondary" type="submit" id="run-search">Submit</button>
 
@@ -152,10 +152,12 @@
 
             <div class="col-6">
                 <!--Google map-->
-                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+                <!-- <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
                     <iframe src="https://maps.google.com/maps?q=toronto&t=&z=13&ie=UTF8&iwloc=&output=embed"
                         frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
+                </div> -->
+                <div id="map" style="width:100%; height:100%"></div>
+
             </div>
 
         </div>
@@ -181,7 +183,17 @@
     <footer>
         &copy; Copyright 2019
     </footer>
+   
 
+    <!-- Link to google map api -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm2fr000GAejpxrGoz6ySrEdWSVlhubfY&callback=initMap">
+    
+    </script>
+    <!-- Link to Javascript file -->
+    <script src="Assets/js/logic.js"></script>
+
+ 
 </body>
 
 </html>
