@@ -106,7 +106,7 @@
               <label for="address">Address <span class="text-muted">(Required)</span></label>
               <input type="text" class="form-control" id="address" placeholder="1234 Main St" required />
               <div class="invalid-feedback">
-                Please enter your shipping address.
+                Please enter your address.
               </div>
             </div>
 
@@ -116,7 +116,24 @@
             </div>
 
             <div class="row">
-              <div class="col-md-5 mb-3 ">
+
+              <div class="col-md-4 mb-3">
+                <label for="zip">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="L5T0V9" required>
+                <div class="invalid-feedback">
+                  Zip code required.
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" placeholder="Toronto" required />
+                <div class="invalid-feedback">
+                  State code required.
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-3 ">
                 <label for="country">Country</label>
                 <input type="text" class="form-control" id="country" placeholder="Canada" required />
                 <div class="invalid-feedback">
@@ -124,102 +141,86 @@
                 </div>
               </div>
 
-              <div class="col-md-4 mb-3">
-                <label for="city">City</label>
-                <input type="text" class="form-control" id="city" placeholder="Ontario" required />
-                <div class="invalid-feedback">
-                  State code required.
-                </div>
-              </div>
+              <button class="btn btn-secondary" type="submit" id="run-search">
+                Submit
+              </button>
 
-              <div class="col-md-3 mb-3">
-                <label for="zip">Zip</label>
-                <input type="text" class="form-control" id="zip" placeholder="" required>
-                <div class="invalid-feedback">
-                  Zip code required.
-                </div>
-              </div> -->
-              <!-- Submit and Clear Buttons
-                <button class="btn btn-secondary" type="submit" id="run-search">
-                  Submit
-                </button>
-
-                <button class="btn btn-secondary" id="clear-all">Clear</button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <!--Google map-->
-              <!-- <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-                    <iframe src="https://maps.google.com/maps?q=toronto&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                        frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div> -->
-              <div id="map" style="width:100%; height:100%"></div>
+              <button class="btn btn-secondary" id="clear-all">Clear</button>
             </div>
-        </div>
-        <div class="row mt-5 mb-5 pl-3">
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Forecast Terminology</th>
-                <th scope="col">PoP</th>
-                <th scope="col">Precipitation's Areal Coverage</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>--</td>
-                <td>Less than 20%</td>
-                <td>Drizzle, sprinkle (flurries)</td>
-              </tr>
-              <tr>
-                <td>Slight chance</td>
-                <td>20%</td>
-                <td>Isolated</td>
-              </tr>
-              <tr>
-                <td>Chance</td>
-                <td>30-50%</td>
-                <td>Scattered</td>
-              </tr>
-              <tr>
-                <td>Likely</td>
-                <td>30-50%</td>
-                <td>Numerous</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- Empty Div for Weather Forecast Result Panel -->
-        <div class="row" x>
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <strong> Chances of Rain</strong>
-              </div>
-
-              <div class="card-body" id="forecast-section">
-                <!--add canvas -->
-                <canvas id="myChart" width="400" height="250"></canvas>
-              </div>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
 
-      <!-- Footer -->
-      <footer>
-        &copy; Copyright 2019
-      </footer>
+      <div class="col-6">
+        <!--Google map-->
+        <!-- <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+                    <iframe src="https://maps.google.com/maps?q=toronto&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div> -->
+        <div id="map" style="width:100%; height:100%"></div>
+      </div>
+    </div>
+    <div class="row mt-5 mb-5 pl-3">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Forecast Terminology</th>
+            <th scope="col">PoP</th>
+            <th scope="col">Precipitation's Areal Coverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>--</td>
+            <td>Less than 20%</td>
+            <td>Drizzle, sprinkle (flurries)</td>
+          </tr>
+          <tr>
+            <td>Slight chance</td>
+            <td>20%</td>
+            <td>Isolated</td>
+          </tr>
+          <tr>
+            <td>Chance</td>
+            <td>30-50%</td>
+            <td>Scattered</td>
+          </tr>
+          <tr>
+            <td>Likely</td>
+            <td>30-50%</td>
+            <td>Numerous</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Empty Div for Weather Forecast Result Panel -->
+    <div class="row" x>
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <strong> Chances of Rain</strong>
+          </div>
 
-      <!-- Link to google map api -->
-      <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm2fr000GAejpxrGoz6ySrEdWSVlhubfY&callback=initMap">
-      </script>
-      <!-- Link to Javascript file -->
-      <script src="Assets/js/logic.js"></script>
+          <div class="card-body" id="forecast-section">
+            <!--add canvas -->
+            <canvas id="myChart" width="400" height="250"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright 2019
+  </footer>
+
+  <!-- Link to google map api -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm2fr000GAejpxrGoz6ySrEdWSVlhubfY&callback=initMap">
+  </script>
+  <!-- Link to Javascript file -->
+  <script src="Assets/js/logic.js"></script>
 </body>
 
 </html>
