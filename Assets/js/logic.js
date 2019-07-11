@@ -30,7 +30,7 @@ $('#run-search').on('click', function(event) {
     .trim();
 
   // url for the weather api
-  var queryURL = `http://api.worldweatheronline.com/premium/v1/weather.ashx?key=6967235c37d54f578f004147190807&q=${city},%20${country}&format=json&num_of_days=14`;
+  var queryURL = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=6967235c37d54f578f004147190807&q=${city},%20${country}&format=json&num_of_days=14`;
 
   $.ajax({
     url: queryURL,
