@@ -44,6 +44,9 @@ $(document).ready(function() {
       var weather = response.data.weather;
 
       console.log(weather);
+      arrayOfDate = [];
+      arrayOfRainChances = [];
+
       for (var i = 0; i < weather.length; i++) {
         var hourly = weather[i].hourly;
         var date = response.data.weather[i].date;
