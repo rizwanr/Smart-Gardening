@@ -66,54 +66,6 @@ $(document).ready(function() {
 
     //Charjs implementation
 
-    function chancesOfRainChart(arrayOfDate, arrayOfRainChances) {
-      var canvas = document.getElementById('myChart');
-      var data = {
-        labels: [...arrayOfDate],
-        datasets: [
-          {
-            label: '% Chances of Rain',
-            fill: true,
-            lineTension: 0.1,
-            backgroundColor: 'rgba(75,192,192,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: 'rgba(75,192,192,1)',
-            pointBackgroundColor: '#fff',
-            pointBorderWidth: 1,
-            pointHoverRadius: 0,
-            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            pointHoverBorderColor: 'rgba(220,220,220,1)',
-            pointHoverBorderWidth: 2,
-            pointRadius: 5,
-            pointHitRadius: 10,
-            data: [...arrayOfRainChances]
-          }
-        ]
-      };
-
-      function adddata() {
-        myLineChart.data.datasets[0].data[7] = 60;
-        myLineChart.update();
-      }
-
-      var option = {
-        showLines: true
-      };
-      var myLineChart = Chart.Line(canvas, {
-        data: data,
-        options: {
-          // This chart will not respond to mousemove, etc
-          events: ['click']
-        }
-      });
-
-      waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances);
-    }
-
     function waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances) {
       console.log(arrayOfDate.length);
       console.log(arrayOfRainChances.length);
@@ -160,6 +112,54 @@ $(document).ready(function() {
           return (indexAthigestChanceOfRain = i);
         }
       }
+    }
+
+    function chancesOfRainChart(arrayOfDate, arrayOfRainChances) {
+      var canvas = document.getElementById('myChart');
+      var data = {
+        labels: [...arrayOfDate],
+        datasets: [
+          {
+            label: '% Chances of Rain',
+            fill: true,
+            lineTension: 0.1,
+            backgroundColor: 'rgba(75,192,192,0.4)',
+            borderColor: 'rgba(75,192,192,1)',
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: 'rgba(75,192,192,1)',
+            pointBackgroundColor: '#fff',
+            pointBorderWidth: 1,
+            pointHoverRadius: 0,
+            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+            pointHoverBorderColor: 'rgba(220,220,220,1)',
+            pointHoverBorderWidth: 2,
+            pointRadius: 5,
+            pointHitRadius: 10,
+            data: [...arrayOfRainChances]
+          }
+        ]
+      };
+
+      function adddata() {
+        myLineChart.data.datasets[0].data[7] = 60;
+        myLineChart.update();
+      }
+
+      var option = {
+        showLines: true
+      };
+      var myLineChart = Chart.Line(canvas, {
+        data: data,
+        options: {
+          // This chart will not respond to mousemove, etc
+          events: ['click']
+        }
+      });
+
+      waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances);
     }
 
     //----------------------------------------
