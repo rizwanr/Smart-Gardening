@@ -70,7 +70,7 @@ $('#run-search').on('click', function(event) {
       datasets: [
         {
           label: '% Chances of Rain',
-          fill: false,
+          fill: true,
           lineTension: 0.1,
           backgroundColor: 'rgba(75,192,192,0.4)',
           borderColor: 'rgba(75,192,192,1)',

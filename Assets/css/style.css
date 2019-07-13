@@ -32,3 +32,8 @@ footer {
 .table th {
   padding: 0rem;
 }
+
+canvas {
+  width: 100px;
+  height: 100px;
+}
