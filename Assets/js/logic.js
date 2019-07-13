@@ -9,10 +9,10 @@
 
 //-------------------------------------------------------------------------
 // variables for google map- intitialize varabiles to Toronto coordinates-100 queen st, toronto, canada
+var latp = 43.6534;
+var lngp = -79.384;
 
 $(document).ready(function() {
-  var latp = 43.6534;
-  var lngp = -79.384;
   //---------------------------------------------------
   var arrayOfRainChances = [];
   var arrayOfDate = [];
@@ -65,54 +65,6 @@ $(document).ready(function() {
     });
 
     //Charjs implementation
-
-    function waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances) {
-      console.log(arrayOfDate.length);
-      console.log(arrayOfRainChances.length);
-
-      // while (arrayOfDate.length) {
-      //   results.push(arrayOfDate.splice(0, 6));
-      //   console.log(results);
-      // }
-      var sevenDays = arrayOfDate.length / 2;
-      console.log(sevenDays);
-      var firstWeek = arrayOfDate.slice(0, sevenDays);
-      var secondWeek = arrayOfDate.slice(sevenDays);
-      console.log(firstWeek);
-      console.log(secondWeek);
-
-      var chancesOfRainforAWeek = arrayOfRainChances.length / 2;
-      var chancesOfRainforFirstWeek = arrayOfRainChances.slice(
-        0,
-        chancesOfRainforAWeek
-      );
-      console.log(chancesOfRainforFirstWeek);
-      var chancesOfRainforSecondWeek = arrayOfRainChances.slice(
-        chancesOfRainforAWeek
-      );
-      console.log(chancesOfRainforSecondWeek);
-
-      var dayOfRainOnFirstWeek = indexAtSeventyAboveChanceOfRainForWeek(
-        chancesOfRainforFirstWeek
-      );
-      var dayOfRainOnSecondWeek = indexAtSeventyAboveChanceOfRainForWeek(
-        chancesOfRainforSecondWeek
-      );
-
-      console.log(`Rain falls on: ${dayOfRainOnFirstWeek}`);
-      console.log(`Rain falls on: ${dayOfRainOnSecondWeek}`);
-    }
-
-    function indexAtSeventyAboveChanceOfRainForWeek(chancesOfRainforWeek) {
-      var indexAthigestChanceOfRain = 0;
-
-      for (var i = 1; i < chancesOfRainforWeek.length; i++) {
-        if (chancesOfRainforWeek[i] > 70) {
-          //console.log((max = chancesOfRainforWeek[i]));
-          return (indexAthigestChanceOfRain = i);
-        }
-      }
-    }
 
     function chancesOfRainChart(arrayOfDate, arrayOfRainChances) {
       var canvas = document.getElementById('myChart');
@@ -189,19 +141,70 @@ $(document).ready(function() {
       initMap();
     });
   });
-  //-------------------------------------------------------------------------
+
   // get lan and lat from the geocoding api and use it in function initmap
-  function initMap() {
-    // The location of Uluru
-    var uluru = { lat: latp, lng: lngp };
-    // The map, centered at Uluru
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
-      center: uluru
-    }); //change the zoom from 4 to 15
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({ position: uluru, map: map });
-    console.log(map);
-  }
 });
+
+function initMap() {
+  // The location of Uluru
+  var uluru = { lat: latp, lng: lngp };
+  // The map, centered at Uluru
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: uluru
+  }); //change the zoom from 4 to 15
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({ position: uluru, map: map });
+  console.log(map);
+}
+
+function waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances) {
+  console.log(arrayOfDate.length);
+  console.log(arrayOfRainChances.length);
+
+  // while (arrayOfDate.length) {
+  //   results.push(arrayOfDate.splice(0, 6));
+  //   console.log(results);
+  // }
+  var sevenDays = arrayOfDate.length / 2;
+  console.log(sevenDays);
+  var firstWeek = arrayOfDate.slice(0, sevenDays);
+  var secondWeek = arrayOfDate.slice(sevenDays);
+  console.log(firstWeek);
+  console.log(secondWeek);
+
+  var chancesOfRainforAWeek = arrayOfRainChances.length / 2;
+  var chancesOfRainforFirstWeek = arrayOfRainChances.slice(
+    0,
+    chancesOfRainforAWeek
+  );
+  console.log(chancesOfRainforFirstWeek);
+  var chancesOfRainforSecondWeek = arrayOfRainChances.slice(
+    chancesOfRainforAWeek
+  );
+  console.log(chancesOfRainforSecondWeek);
+
+  var dayOfRainOnFirstWeek = indexAtSeventyAboveChanceOfRainForWeek(
+    chancesOfRainforFirstWeek
+  );
+  var dayOfRainOnSecondWeek = indexAtSeventyAboveChanceOfRainForWeek(
+    chancesOfRainforSecondWeek
+  );
+
+  console.log(`Rain falls on: ${dayOfRainOnFirstWeek}`);
+  console.log(`Rain falls on: ${dayOfRainOnSecondWeek}`);
+}
+
+function indexAtSeventyAboveChanceOfRainForWeek(chancesOfRainforWeek) {
+  var indexAthigestChanceOfRain = 0;
+
+  for (var i = 1; i < chancesOfRainforWeek.length; i++) {
+    if (chancesOfRainforWeek[i] > 70) {
+      //console.log((max = chancesOfRainforWeek[i]));
+      return (indexAthigestChanceOfRain = i);
+    }
+  }
+}
+//-------------------------------------------------------------------------
+
 // });
