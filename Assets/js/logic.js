@@ -8,9 +8,6 @@
 // }
 
 //-------------------------------------------------------------------------
-// variables for google map- intitialize varabiles to Toronto coordinates-100 queen st, toronto, canada
-var latp = 43.6534;
-var lngp = -79.384;
 
 $(document).ready(function() {
   //---------------------------------------------------
@@ -118,13 +115,16 @@ $(document).ready(function() {
     }
 
     //----------------------------------------
+    // variables for google map- intitialize varabiles to Toronto coordinates-100 queen st, toronto, canada
+    var latp = 43.6534;
+    var lngp = -79.384;
+    
     //Geocoding api-when the user clicks the submit button,
     // the api gets the address and then returns lat and lng coordinate
 
     // var country = "Canada";
     // var city="toronto";
     // var address="80 Wellesley street East"
-
     var queryURL =
       'https://maps.googleapis.com/maps/api/geocode/json?address=' +
       address +
