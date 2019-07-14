@@ -114,6 +114,24 @@ $(document).ready(function() {
         }
       });
 
+      // const context = canvas.getContext('2d');
+      // const canvasX = canvas.offsetLeft;
+      // const canvasY = canvas.offsetTop;
+
+      // context.fillRect(0, 0, 376, 458);
+
+      // canvas.addEventListener('click', function(event) {
+      //   const mouseX = event.clientX;
+      //   const mouseY = event.clientY;
+      //   console.log(mouseX, mouseY);
+
+      //   if (0 <= mouseX && mouseX <= 377 && (0 <= mouseY && mouseY <= 458)) {
+      //     console.log('clicked inside square');
+      //   } else {
+      //     console.log('clicked outside of square');
+      //   }
+      // });
+
       waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances);
     }
 
@@ -194,8 +212,53 @@ function waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances) {
     chancesOfRainforSecondWeek
   );
 
-  console.log(`Rain falls on: ${dayOfRainOnFirstWeek}`);
-  console.log(`Rain falls on: ${dayOfRainOnSecondWeek}`);
+  console.log(dayOfRainOnFirstWeek);
+
+  if (dayOfRainOnFirstWeek === undefined) {
+    $('#first-week-result').text(`Seems like the weather Gods are unhappy`);
+    var calenderFirstWeek = $('#firstWeekCalenderId');
+    calenderFirstWeek.css('display', 'block');
+    var firstDateOfFirstWeek;
+    var lastDateOfFirstWeek;
+    setTimeout(() => {
+      firstDateOfFirstWeek = firstWeek[0].replace(/-/g, '');
+      lastDateOfFirstWeek = firstWeek[6].replace(/-/g, '');
+
+      var url = `https://calendar.google.com/calendar/r/eventedit?text=WATER+GARDEN+REMINDER&dates=${firstDateOfFirstWeek}T160000Z/${lastDateOfFirstWeek}T010000Z&location=HOME&sf=true`;
+      calenderFirstWeek.attr('href', url);
+      console.log(firstDateOfFirstWeek, lastDateOfFirstWeek);
+    }, 4000);
+  } else {
+    $('#second-week-result').text(
+      `There is a high probablity of rain on ${
+        secondWeek[dayOfRainOnFirstWeek]
+      }`
+    );
+    $('#firstWeekCalenderId').css('display', 'none');
+  }
+
+  if (dayOfRainOnSecondWeek === undefined) {
+    $('#second-week-result').text(`Seems like the weather Gods are unhappy`);
+    var calenderSecondWeek = $('#secondWeekCalenderId');
+    calenderSecondWeek.css('display', 'block');
+    var firstDateOfSecondWeek;
+    var lastDateOfSecondWeek;
+    setTimeout(() => {
+      firstDateOfSecondWeek = secondWeek[0].replace(/-/g, '');
+      lastDateOfSecondWeek = secondWeek[6].replace(/-/g, '');
+
+      var url = `https://calendar.google.com/calendar/r/eventedit?text=WATER+GARDEN+REMINDER&dates=${firstDateOfSecondWeek}T160000Z/${lastDateOfSecondWeek}T010000Z&location=HOME&sf=true`;
+      calenderSecondWeek.attr('href', url);
+      console.log(firstDateOfSecondWeek, lastDateOfSecondWeek);
+    }, 4000);
+  } else {
+    $('#second-week-result').text(
+      `There is a high probablity of rain on ${
+        secondWeek[dayOfRainOnSecondWeek]
+      }`
+    );
+    $('#secondWeekCalenderId').css('display', 'none');
+  }
 }
 
 function indexAtSeventyAboveChanceOfRainForWeek(chancesOfRainforWeek) {
@@ -208,6 +271,7 @@ function indexAtSeventyAboveChanceOfRainForWeek(chancesOfRainforWeek) {
     }
   }
 }
+
 //-------------------------------------------------------------------------
 
 // });
