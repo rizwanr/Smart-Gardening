@@ -12,12 +12,12 @@
 var latp = 43.6534;
 var lngp = -79.384;
 
-$(document).ready(function () {
+$(document).ready(function() {
   //---------------------------------------------------
   var arrayOfRainChances = [];
   var arrayOfDate = [];
   //Geting data from the weather api
-  $('#run-search').on('click', function (event) {
+  $('#run-search').on('click', function(event) {
     console.log('clicked');
     event.preventDefault();
 
@@ -38,7 +38,7 @@ $(document).ready(function () {
     $.ajax({
       url: queryURL,
       method: 'GET'
-    }).then(function (response) {
+    }).then(function(response) {
       console.log(response);
 
       var weather = response.data.weather;
@@ -60,10 +60,8 @@ $(document).ready(function () {
         }
         arrayOfRainChances.push(totalChancesOfRainPerDay / hourly.length);
         console.log(arrayOfRainChances);
-
+        $('#chart').css('display', 'block');
         chancesOfRainChart(arrayOfDate, arrayOfRainChances);
-
-
       }
     });
 
@@ -73,27 +71,29 @@ $(document).ready(function () {
       var canvas = document.getElementById('myChart');
       var data = {
         labels: [...arrayOfDate],
-        datasets: [{
-          label: '% Chances of Rain',
-          fill: true,
-          lineTension: 0.1,
-          backgroundColor: 'rgba(75,192,192,0.4)',
-          borderColor: 'rgba(75,192,192,1)',
-          borderCapStyle: 'butt',
-          borderDash: [],
-          borderDashOffset: 0.0,
-          borderJoinStyle: 'miter',
-          pointBorderColor: 'rgba(75,192,192,1)',
-          pointBackgroundColor: '#fff',
-          pointBorderWidth: 1,
-          pointHoverRadius: 0,
-          pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-          pointHoverBorderColor: 'rgba(220,220,220,1)',
-          pointHoverBorderWidth: 2,
-          pointRadius: 5,
-          pointHitRadius: 10,
-          data: [...arrayOfRainChances]
-        }]
+        datasets: [
+          {
+            label: '% Chances of Rain',
+            fill: true,
+            lineTension: 0.1,
+            backgroundColor: 'rgba(75,192,192,0.4)',
+            borderColor: 'rgba(75,192,192,1)',
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: 'rgba(75,192,192,1)',
+            pointBackgroundColor: '#fff',
+            pointBorderWidth: 1,
+            pointHoverRadius: 0,
+            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+            pointHoverBorderColor: 'rgba(220,220,220,1)',
+            pointHoverBorderWidth: 2,
+            pointRadius: 5,
+            pointHitRadius: 10,
+            data: [...arrayOfRainChances]
+          }
+        ]
       };
 
       function adddata() {
@@ -134,7 +134,7 @@ $(document).ready(function () {
     $.ajax({
       url: queryURL,
       method: 'GET'
-    }).then(function (response) {
+    }).then(function(response) {
       console.log(response);
 
       latp = response.results[0].geometry.location.lat;
@@ -144,7 +144,8 @@ $(document).ready(function () {
   });
   //-------------------------------------------------------------------------
   // Google NEWS API
-  var url = 'https://newsapi.org/v2/everything?' +
+  var url =
+    'https://newsapi.org/v2/everything?' +
     'q=gardening&' +
     'from=2019-07-13&' +
     'sortBy=popularity&' +
@@ -153,20 +154,7 @@ $(document).ready(function () {
   $.ajax({
     url: url,
     method: 'GET'
-  }).then(updatePage)
-  //var articleName = response.articles[0].title;
-  //$("#news").text(articleName);
-
-
-  // var req = new Request(url);
-
-  // fetch(req)
-  //     .then(function(response) {
-  //         console.log(response.json());
-  //         // console.log(response);
-  //     })  
-  // console.log(req);
-  //-----------------------------------------------------------------------------  
+  }).then(updatePage);
 });
 
 // get lan and lat from the geocoding api and use it in function initmap
@@ -222,50 +210,92 @@ function waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances) {
     chancesOfRainforSecondWeek
   );
 
-  console.log(`Rain falls on: ${dayOfRainOnFirstWeek}`);
-  console.log(`Rain falls on: ${dayOfRainOnSecondWeek}`);
+  console.log(dayOfRainOnFirstWeek);
+
+  if (dayOfRainOnFirstWeek === undefined) {
+    $('#first-week-result').text(`Seems like the weather Gods are unhappy`);
+    var calenderFirstWeek = $('#firstWeekCalenderId');
+    calenderFirstWeek.css('display', 'block');
+    var firstDateOfFirstWeek;
+    var lastDateOfFirstWeek;
+    setTimeout(() => {
+      firstDateOfFirstWeek = firstWeek[0].replace(/-/g, '');
+      lastDateOfFirstWeek = firstWeek[6].replace(/-/g, '');
+
+      var url = `https://calendar.google.com/calendar/r/eventedit?text=WATER+GARDEN+REMINDER&dates=${firstDateOfFirstWeek}T160000Z/${lastDateOfFirstWeek}T010000Z&location=HOME&sf=true`;
+      calenderFirstWeek.attr('href', url, '_blank');
+
+      console.log(firstDateOfFirstWeek, lastDateOfFirstWeek);
+    }, 4000);
+  } else {
+    $('#first-week-result').text(
+      `There is a high probablity of rain on ${firstWeek[dayOfRainOnFirstWeek]}`
+    );
+    $('#firstWeekCalenderId').css('display', 'none');
+  }
+
+  if (dayOfRainOnSecondWeek === undefined) {
+    $('#second-week-result').text(`Seems like the weather Gods are unhappy`);
+    var calenderSecondWeek = $('#secondWeekCalenderId');
+    calenderSecondWeek.css('display', 'block');
+    var firstDateOfSecondWeek;
+    var lastDateOfSecondWeek;
+    setTimeout(() => {
+      firstDateOfSecondWeek = secondWeek[0].replace(/-/g, '');
+      lastDateOfSecondWeek = secondWeek[6].replace(/-/g, '');
+
+      var url = `https://calendar.google.com/calendar/r/eventedit?text=WATER+GARDEN+REMINDER&dates=${firstDateOfSecondWeek}T160000Z/${lastDateOfSecondWeek}T010000Z&location=HOME&sf=true`;
+      calenderSecondWeek.attr('href', url);
+
+      console.log(firstDateOfSecondWeek, lastDateOfSecondWeek);
+    }, 4000);
+  } else {
+    $('#second-week-result').text(
+      `There is a high probablity of rain on ${
+        secondWeek[dayOfRainOnSecondWeek]
+      }`
+    );
+    $('#secondWeekCalenderId').css('display', 'none');
+  }
 }
 
 function indexAtSeventyAboveChanceOfRainForWeek(chancesOfRainforWeek) {
   var indexAthigestChanceOfRain = 0;
 
   for (var i = 1; i < chancesOfRainforWeek.length; i++) {
-    if (chancesOfRainforWeek[i] > 70) {
+    if (chancesOfRainforWeek[i] >= 70) {
       //console.log((max = chancesOfRainforWeek[i]));
       return (indexAthigestChanceOfRain = i);
     }
   }
 }
 
-// Function update the "news" section
+//Function update the "news" section
 
 function updatePage(response) {
   var numArticles = 3;
-  
+
   //var articleName = response.articles[0].title;
   //$("#news").text(articleName);
 
   for (var i = 0; i < numArticles; i++) {
     var article = response.articles[i];
 
-    var $articleList = $("<ul>");
-    $articleList.addClass("list-group");
+    var $articleList = $('#news');
 
     //var headline = article.title;
-    var $articleListItem = $("<li class='list-group-item articleHeadline'>");
+    var $articleListItem = $(
+      "<li class='list-group-item  col-sm-4 p-3  articleHeadline'>"
+    );
 
     var articleName = article.title;
-    $articleListItem.append("<h4>Article Name: " + articleName + "</h4>");
+    $articleListItem.append(articleName);
 
-    var author = article.author;
-    $articleListItem.append("<h6>Author: " + author + "</h6>");
-    
-    $articleListItem.append("<a href='" + article.url + "'>" + article.url + "</a>");
+    $articleListItem.append(
+      "<a href='" + article.url + "'>" + article.url + '</a>'
+    );
 
     $articleList.append($articleListItem);
-    $("#news").append($articleList);
+    $('#news').append($articleList);
   }
-
-  
 }
-
