@@ -299,3 +299,5 @@ function updatePage(response) {
     $('#news').append($articleList);
   }
 }
+
+

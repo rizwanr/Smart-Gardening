@@ -2796,7 +2796,7 @@ tbody.collapse.show {
   display: none; }
 .tab-content > .active {
   display: block; }
-
+/* 
 .navbar {
   position: relative;
   display: flex;
@@ -2855,7 +2855,7 @@ tbody.collapse.show {
 
 .navbar-toggler-right {
   position: absolute;
-  right: 1rem; }
+  right: 1rem; } */
 
 @media (max-width: 575px) {
   .navbar-toggleable .navbar-nav .dropdown-menu {
@@ -6680,3 +6680,6 @@ body {
   font-size:1.2rem;
   font-weight:0.9
 }
+
+
+
