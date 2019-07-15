@@ -284,7 +284,9 @@ function updatePage(response) {
     var $articleList = $('#news');
 
     //var headline = article.title;
-    var $articleListItem = $("<li class='list-group-item articleHeadline'>");
+    var $articleListItem = $(
+      "<li class='list-group-item  col-sm-4 p-3  articleHeadline'>"
+    );
 
     var articleName = article.title;
     $articleListItem.append(articleName);

@@ -6671,4 +6671,12 @@ body {
   .table .thead-dark th {
     background-color:#5EB3AC
   }
-/*# sourceMappingURL=app.css.map */
+
+  .list-group {
+    flex-direction:row
+  }/*# sourceMappingURL=app.css.map */
+
+.articleHeadline{
+  font-size:1.2rem;
+  font-weight:0.9
+}
