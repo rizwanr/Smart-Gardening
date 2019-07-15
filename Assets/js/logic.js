@@ -229,9 +229,7 @@ function waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances) {
     }, 4000);
   } else {
     $('#first-week-result').text(
-      `There is a high probablity of rain on ${
-        secondWeek[dayOfRainOnFirstWeek]
-      }`
+      `There is a high probablity of rain on ${firstWeek[dayOfRainOnFirstWeek]}`
     );
     $('#firstWeekCalenderId').css('display', 'none');
   }
@@ -265,14 +263,14 @@ function indexAtSeventyAboveChanceOfRainForWeek(chancesOfRainforWeek) {
   var indexAthigestChanceOfRain = 0;
 
   for (var i = 1; i < chancesOfRainforWeek.length; i++) {
-    if (chancesOfRainforWeek[i] > 70) {
+    if (chancesOfRainforWeek[i] >= 70) {
       //console.log((max = chancesOfRainforWeek[i]));
       return (indexAthigestChanceOfRain = i);
     }
   }
 }
 
-// Function update the "news" section
+//Function update the "news" section
 
 function updatePage(response) {
   var numArticles = 3;
@@ -283,17 +281,13 @@ function updatePage(response) {
   for (var i = 0; i < numArticles; i++) {
     var article = response.articles[i];
 
-    var $articleList = $('<ul>');
-    $articleList.addClass('list-group');
+    var $articleList = $('#news');
 
     //var headline = article.title;
     var $articleListItem = $("<li class='list-group-item articleHeadline'>");
 
     var articleName = article.title;
-    $articleListItem.append('<h4>Article Name: ' + articleName + '</h4>');
-
-    var author = article.author;
-    $articleListItem.append('<h6>Author: ' + author + '</h6>');
+    $articleListItem.append(articleName);
 
     $articleListItem.append(
       "<a href='" + article.url + "'>" + article.url + '</a>'

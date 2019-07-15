@@ -32,3 +32,7 @@ footer {
 .table th {
   padding: 0rem;
 }
+
+i {
+  opacity: 0.3;
+}

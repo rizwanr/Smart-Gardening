@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Smart Gardening</title>
-  <!-- Link to bootstrap -->
+  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./Assets/css/style.css" />
 
   <!-- Link to Fontawesome Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" />
 
   <!-- Links to all Bootstrap libraries -->
@@ -30,6 +31,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Link to Chartjs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css"/>
 </head>
 
 <body>
@@ -60,7 +65,7 @@
       <div class="container d-flex justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-center">
           <i class="fab fa-envira"></i>
-          <strong>Smart Gardening</strong>
+<nav-bar-brand>Smart Gardening</nav-bar-brand>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
           aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,9 +145,9 @@
                   </div>
                 </div>
                  
-                <button class="btn btn-secondary mr-3 ml-3" type="submit" id="run-search">Submit</button>
+                <button class="weather-button btn btn-primary mr-3 ml-3" type="submit" id="run-search">Submit</button>
 
-                <button class="btn btn-secondary" id="clear-all">Clear</button>
+                <button class="weather-button btn btn-primary" id="clear-all">Clear</button>
               </div>
             </form>
           </div>
@@ -157,8 +162,77 @@
               <div id="map" style="width:100%; height:100%"></div>
             </div>
         </div>
-        <div class="row mt-5 mb-5 pl-3">
-          <table class="table">
+
+        <!-- Empty Div for Weather Forecast Result Panel -->
+<div class="row mb-5 mt-5" style="display: none" id="chart">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <strong> Chances of Rain</strong>
+      </div>
+
+      <div class="card-body" id="forecast-section">
+        <!--add canvas -->
+        <canvas id="myChart" width="400" height="250"></canvas>
+      </div>
+    </div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary week-button " style="width:47%" data-toggle="modal" data-target="#firstWeekModal">
+      Week 1
+    </button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary week-button" style="width:47%; float:right" data-toggle="modal" data-target="#secondWeekModal">
+      Week 2
+    </button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="firstWeekModal" tabindex="-1" role="dialog" aria-labelledby="firstWeekModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="firstWeekModalLabel">First Week</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="first-week-result"></p>
+        <a class="js-add-to-calendar-modal js-d-dialog-trigger" data-automation="add-to-calendar" role="button" aria-haspopup="true"
+          data-xd-wired="dialog-trigger" style="display: none" id="firstWeekCalenderId">Add to Google Calendar</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="secondWeekModal" tabindex="-1" role="dialog" aria-labelledby="secondWeekModalModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="secondWeekModalModalLabel">Second Week</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="second-week-result"></p>
+        <a class="js-add-to-calendar-modal js-d-dialog-trigger" data-automation="add-to-calendar" role="button" aria-haspopup="true"
+          data-xd-wired="dialog-trigger" style="display: none" id="secondWeekCalenderId">Add to Google Calendar</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="row  mb-5 mt-5 pl-3">
+          <table class="table mt-5">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Forecast Terminology</th>
@@ -190,103 +264,88 @@
             </tbody>
           </table>
         </div>
-        <!-- Empty Div for Weather Forecast Result Panel -->
-<div class="row mb-5" style="display: none" id="chart">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <strong> Chances of Rain</strong>
-      </div>
 
-      <div class="card-body" id="forecast-section">
-        <!--add canvas -->
-        <canvas id="myChart" width="400" height="250"></canvas>
-      </div>
-    </div>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary " style="width:47%" data-toggle="modal" data-target="#firstWeekModal">
-      Week 1
-    </button>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" style="width:47%; float:right" data-toggle="modal" data-target="#secondWeekModal">
-      Week 2
-    </button>
-  </div>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="firstWeekModal" tabindex="-1" role="dialog" aria-labelledby="firstWeekModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="firstWeekModalLabel">First Week</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p id="first-week-result"></p>
-        <a class="js-add-to-calendar-modal js-d-dialog-trigger" data-automation="add-to-calendar" role="button" aria-haspopup="true"
-          data-xd-wired="dialog-trigger" style="display: none" id="firstWeekCalenderId">Add to Google Calendar</a>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div class="modal fade" id="secondWeekModal" tabindex="-1" role="dialog" aria-labelledby="secondWeekModalModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="secondWeekModalModalLabel">Second Week</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p id="second-week-result"></p>
-        <a class="js-add-to-calendar-modal js-d-dialog-trigger" data-automation="add-to-calendar" role="button" aria-haspopup="true"
-          data-xd-wired="dialog-trigger" style="display: none" id="secondWeekCalenderId">Add to Google Calendar</a>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      
-      </div>
-    </div>
-  </div>
-</div>
 <!-- Article section -->
-<div class="row mt-5">
-  <div class="col-sm-12">
-    <div class="card">
-      <div class="card-header">
-        <strong>Top Gardening Articles</strong>
-      </div>
-      <div class="card-body" id="news">
+<div class="container text-center">
+  <h3>READ GARDENING ARTICLES WHILE YOU ARE HERE</h3>
+<div class="row mt-5 mb-5">
+  <div class="col-sm-12" id ="new-article">
+    <ul class="list-group list-group-horizontal" id="news">
 
-      </div>
-
+      </ul>
     </div>
   </div>
+
+</div>
+
+
+
+
 </div>
 </div>
+<div id ="quotes" class="mt-5 mb-5">
+  <div class="container text-center mt-5">
+<h3 class="mb-5">WHAT OUR HAPPY CUSTOMERS ARE SAYING</h3>
+<div class="row">
+  <div class="col-md-4 my-2">
+<i class="fas fa-quote-left fa-2x text-primary "> </i>
+      <blockquote class='blockquote'>
+        <p class="mb-3">Smart Gardening has taken care of the hassles realated to watering lawns</p>
+        <footer class="blockquote-footer">Aditi</footer>
+      </blockquote>
 
-       
-      </div>
+  </div>
+<div class="col-md-4 my-2">
+<i class="fas fa-quote-left fa-2x text-primary "> </i>
+    <blockquote class='blockquote'>
+      <p class="mb-3">I use Smart Gardening for setting reminders on my calender  </p>
+      <footer class="blockquote-footer">Richard</footer>
+    </blockquote>
 
+</div>
+<div class="col-md-4 my-2">
+<i class="fas fa-quote-left fa-2x text-primary "> </i>
+    <blockquote class='blockquote'>
+      <p class="mb-3">For what it's worth,I have been using Smart Gardening for a while and I am satisfied with the predictions it makes</p>
+      <footer class="blockquote-footer">John</footer>
+    </blockquote>
 
-      <!-- Footer -->
-      <footer>
-        &copy; Copyright 2019
-      </footer>
+</div>
+</div>
+  </div>
+</div>
 
+<div class="bg-dark mt-3">
+    <div class="container text-white text-center py-5">
+      <p class ="lead">JOIN OUR NEWSLETTER FOR MORE APPLICATION</p>
+     <div class="row justify-content-center">
+      <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+        <form action="" class="form-inline">
+    <div class="input-group">
+    <input type="text" class="form-control" placeholder="Your Email">
+    <div class="input-group-append">
+      <button class="btn btn-primary">Join Now</button>
+    </div>
+    </div>
+     </form>
+    </div> 
+    </div>
+    </div>
+  </div>
+  <div id="footer" class="bg-secondary p-3">
+    <ul class="nav text-center justify-content-center flex-column flex-sm-row">
+      <li class="nav-item">
+        <a href="" class="nav-link text-white">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link text-white">TRY THE APP!</a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link text-white">CONTACT</a>
+      </li>
+    </ul>
+
+  </div>
       <!-- Link to google map api -->
       <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm2fr000GAejpxrGoz6ySrEdWSVlhubfY&callback=initMap">

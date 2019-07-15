@@ -1,0 +1,17 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+  font-weight: 100;
+}
+.navbar .navbar-brand h3 {
+  font-weight: 100;
+}
+
+.weather-button {
+  font-size: 1rem;
+  border-radius: 2rem;
+}
+
+/*# sourceMappingURL=custom.css.map */
