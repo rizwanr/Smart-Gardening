@@ -1,7 +1,4 @@
-
-
-#map{
-
+#map {
   width: 100%;
   height: 80%;
   margin-top: 50px;
@@ -32,10 +29,7 @@ i {
   opacity: 0.3;
 }
 
-
-* header-navbar */
-
- #masthead {
+* header-navbar */ #masthead {
   width: 100%;
   margin: 0 0 30px;
   overflow: auto;
@@ -43,109 +37,114 @@ i {
   background: #ffffff;
   border-bottom: 2px solid #cccccc;
 }
- 
-.navbar{
-  padding:0;
-  background-color: #8F9FA6;
+
+.navbar {
+  padding: 0;
+  background-color: #8f9fa6;
   width: 100%;
-    height: 100px;
+  height: 100px;
 }
 .navbar-brand {
   width: 250px;
   height: 90px;
-  font-family: Georgia, Times, "Times New Roman", serif;
+  font-family: Georgia, Times, 'Times New Roman', serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 90px;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
- 
 }
 
-.navbar-nav{
+.navbar-nav {
   margin-right: 13vw;
   font-size: 18px;
   opacity: 0.8;
-
 }
 
-.navbar-collapse{
-  flex-grow:0;
+.navbar-collapse {
+  flex-grow: 0;
 }
 
-nav .navbar-nav a{
+nav .navbar-nav a {
   color: white !important;
   /* border-left: 1px solid #efefef; */
   margin-right: 15% !important;
   font-size: 20px;
-
 }
 
 nav .navbar-nav a:first-child {
-    border-left: 0 none;
-  }
-
-nav .navbar-brand{
-    color: #ffffff !important;
+  border-left: 0 none;
 }
-#firstlook{
+
+nav .navbar-brand {
+  color: #ffffff !important;
+}
+#firstlook {
   background: url('../images/backimg2.jpg');
   height: 97vh;
-  width:100%;
-  opacity: 0.95;
+  width: 100%;
+  opacity: 0.79;
   /* margin-bottom: 35px; */
-  }
+}
 
 #firstlook p {
   color: white;
   padding-top: 50vh;
   font-size: 3vw;
   padding-left: 36vw;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   letter-spacing: 2px;
-  
 }
 
-#firstlook a{
+#firstlook a {
   margin-top: 47vh;
   margin-left: 43vw;
   font-size: 2vw;
   color: white;
-  border: solid  1px;
+  border: solid 1px;
   padding: 5px 15px 8px 15px;
-  font-family: "Quicksand", sans-serif;
- 
-  
+  font-family: 'Quicksand', sans-serif;
 }
 
+#information {
+  padding-top: 13vh;
+}
 
-   #information{
+#articles {
+  padding-top: 6%;
+}
 
-    padding-top: 13vh;
-  }
+.weather-button {
+  background-color: #34bfa6;
+}
 
-  
-  #articles{
-
-    padding-top: 6%;
-  }
-
-  .weather-button{
-    background-color:#34BFA6;
-  }
-
-  .table .thead-dark th {
-    background-color: #34BFA6;
+.table .thead-dark th {
+  background-color: #34bfa6;
 }
 
 .btn-primary {
- 
-  background-color: #34BFA6;
- 
+  background-color: #34bfa6;
 }
 
 #new-article a {
+  color: #34bfa6;
+}
 
-  color: #34BFA6;
+.week-button {
+  background-color: transparent;
+  color: black;
+  border: 0;
+  background-color: transparent;
+  border: 0;
+}
+
+.about-us-image {
+  width: 70%;
+}
+
+@media only screen and (max-width: 766px) {
+  #map {
+    height: 400px;
+  }
 }

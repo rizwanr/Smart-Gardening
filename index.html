@@ -70,17 +70,40 @@
 <!-- // first look -->
       <div id="firstlook">
           <p>Smart Gardening</p>
-          <a href="#information">Let's start</a>
-        
+          <a href="#information">Let's start</a>    
       </div>
 
+<div class="container mt-5 text-center" id="about">
+  <h2 class ="mb-4">ABOUT US</h2>
+  <div class="row">
+  <div class="col-md-4 p-3">
+    <img src="Assets/images/icons/water.png" alt="" class="img-fluid about-us-image d-none d-md-inline">
+    <h3>Lawn caring</h3>
+    <p class="lead">We are here to help you with the best plan to water your lawn. Our App works based on the information that you will provide
+    us!</p>
+  </div>
+  <div class="col-md-4 p-3">
+      <img src="Assets/images/icons/clouds.png" alt="" class="img-fluid about-us-image d-none d-md-inline">
+    <h3>Weather Forecast</h3>
+    <p class="lead">Weather can be unpredictable! Our website will show you the forecast (i.e. chance of rain) for the coming weeks based on location on the map </p>
+  </div>
+  <div class="col-md-4 p-3">
+    <img src="Assets/images/icons/calender.png" alt="" class="img-fluid about-us-image d-none d-md-inline">
+    <h3>Calender Reminder</h3>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam, neque voluptatibus repellendus esse quos quisquam
+      dignissimos placeat veritatis quaerat.</p>
+  </div>
+  </div>
+</div>
   <!-- Information Form-->
-  <section id="information">
-      <div class="container" >
+
+      <div class="container mt-5" >
+          <h2 class="mb-4 text-center">INFORMATION</h2>
           <div class="row">
-            <div class="col-6">
-              <div class="col-md-8 order-md-1" >
-                <h3 class="mb-3" >Information</h3>
+
+    <div class="col-md-6 order-md-1" >
+              
+              
                 <form class="needs-validation" novalidate>
                   <div class="row">
                     <div class="col-md-6 mb-3">
@@ -145,29 +168,37 @@
                         </div>
                       </div>
                        
-                      <button class="weather-button btn  mr-3 ml-3" type="submit" id="run-search">Submit</button>
+                      <button class="weather-button btn btn-primary mr-3 ml-3" type="submit" id="run-search">Submit</button>
                     
       
-                      <button class="weather-button btn " id="clear-all">Clear</button>
+                      <button class="weather-button btn btn-primary " id="clear-all">Clear</button>
+                      
                     </div>
                   </form>
                 </div>
-              </div>
-      
-              <div class="col-6">
-                <!--Google map-->
-                      <div id="map" ></div>
+                    <div class="col-md-6 order-md-2 .d-flex">
+                      <!--Google map-->
+                      <div id="map" </div>
+                      </div>
+                    
+                    </div>
                   </div>
-              </div>
-            </div>
+                  </div
+              
+             
+         
+        
+        
       
 
-  </section>
-     
   
         <!-- Empty Div for Weather Forecast Result Panel -->
-<div class="container">
-<div class="row mb-5 mt-5" style="display: none" id="chart">
+
+
+        <div class="container">
+
+
+          <div class="row mb-5 mt-5" style="display: none" id="chart">
   <div class="col-12">
     <div class="card">
       <div class="card-header"  id="results">
@@ -207,7 +238,7 @@
           data-xd-wired="dialog-trigger" style="display: none" id="firstWeekCalenderId">Add to Google Calendar</a>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 
       </div>
     </div>
@@ -228,7 +259,7 @@
           data-xd-wired="dialog-trigger" style="display: none" id="secondWeekCalenderId">Add to Google Calendar</a>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       
       </div>
     </div>
@@ -274,7 +305,7 @@
 <!-- Article section -->
 <section id="articles">
     <div class="container text-center mt-5 mb-5" >
-        <h3>Related ARTICLES WHILE YOU ARE HERE</h3>
+        <h3>RELATED ARTICLES WHILE YOU ARE HERE</h3>
         <div  id ="new-article">
           <ul class="list-group list-group-horizontal row" id="news">
       
@@ -316,16 +347,7 @@
 </div>
   </div>
 </div>
-<div class="container pt-4" id="about">
-  <div class="row" >
-    <div class=col-12>
-      <h2 class="text-center mb-2">About</h2>
-    
-      <p>We are here to help you with the best plan to water your lawn. Our App works based on the information that you will provide us! With the use of new technologies, this App will show you the location on the map and the forecast 
-        (i.e. chance of rain) for the two weeks ahead. Also you can find some interesting articles about gardening in our website..</p>
-    </div>
-  </div>
-</div>
+
 
 <div class="bg-dark mt-3">
     <div class="container text-white text-center py-5">
