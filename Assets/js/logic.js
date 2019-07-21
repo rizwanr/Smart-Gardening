@@ -11,17 +11,27 @@
 // variables for google map- intitialize varabiles to Toronto coordinates-100 queen st, toronto, canada
 var latp = 43.6534;
 var lngp = -79.384;
+var firstWeek = [];
+var secondWeek = [];
 
 $(document).ready(function() {
   //---------------------------------------------------
   var arrayOfRainChances = [];
   var arrayOfDate = [];
-  //Geting data from the weather api
-  $('#run-search').on('click', function(event) {
-    console.log('clicked');
+
+  $('form').submit(function(event) {
     event.preventDefault();
 
-    // get the user input
+    $('#clear-all').on('click', function() {
+      $('#address').val('');
+      $('#address2').val('');
+      $('#zip').val('');
+      $('#city').val('');
+      $('#country').val('');
+    });
+
+    //Geting data from the weather api
+
     var address = $('#address')
       .val()
       .trim();
@@ -142,6 +152,7 @@ $(document).ready(function() {
       initMap();
     });
   });
+
   //-------------------------------------------------------------------------
   // Google NEWS API
   var url =
@@ -187,8 +198,8 @@ function waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances) {
   // }
   var sevenDays = arrayOfDate.length / 2;
   console.log(sevenDays);
-  var firstWeek = arrayOfDate.slice(0, sevenDays);
-  var secondWeek = arrayOfDate.slice(sevenDays);
+  firstWeek = arrayOfDate.slice(0, sevenDays);
+  secondWeek = arrayOfDate.slice(sevenDays);
   console.log(firstWeek);
   console.log(secondWeek);
 
@@ -212,28 +223,38 @@ function waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances) {
 
   console.log(dayOfRainOnFirstWeek);
 
+  firstWeekRain(dayOfRainOnFirstWeek, firstWeek);
+
+  secondWeekRain(dayOfRainOnSecondWeek, secondWeek);
+}
+
+function firstWeekRain(dayOfRainOnFirstWeek, firstWeek) {
   if (dayOfRainOnFirstWeek === undefined) {
     $('#first-week-result').text(`Seems like the weather Gods are unhappy`);
     var calenderFirstWeek = $('#firstWeekCalenderId');
     calenderFirstWeek.css('display', 'block');
     var firstDateOfFirstWeek;
     var lastDateOfFirstWeek;
-    setTimeout(() => {
-      firstDateOfFirstWeek = firstWeek[0].replace(/-/g, '');
-      lastDateOfFirstWeek = firstWeek[6].replace(/-/g, '');
 
-      var url = `https://calendar.google.com/calendar/r/eventedit?text=WATER+GARDEN+REMINDER&dates=${firstDateOfFirstWeek}T160000Z/${lastDateOfFirstWeek}T010000Z&location=HOME&sf=true`;
-      calenderFirstWeek.attr('href', url, '_blank');
+    firstDateOfFirstWeek = moment(firstWeek[0], 'YYYY-MM-DD').format(
+      'YYYYMMDD'
+    );
 
-      console.log(firstDateOfFirstWeek, lastDateOfFirstWeek);
-    }, 4000);
+    lastDateOfFirstWeek = moment(firstWeek[6], 'YYYY-MM-DD').format('YYYYMMDD');
+
+    var url = `https://calendar.google.com/calendar/r/eventedit?text=WATER+GARDEN+REMINDER&dates=${firstDateOfFirstWeek}T160000Z/${lastDateOfFirstWeek}T010000Z&location=HOME&sf=true`;
+    calenderFirstWeek.attr('href', url, '_blank');
+
+    console.log(firstDateOfFirstWeek, lastDateOfFirstWeek);
   } else {
     $('#first-week-result').text(
       `There is a high probablity of rain on ${firstWeek[dayOfRainOnFirstWeek]}`
     );
     $('#firstWeekCalenderId').css('display', 'none');
   }
+}
 
+function secondWeekRain(dayOfRainOnSecondWeek, secondWeek) {
   if (dayOfRainOnSecondWeek === undefined) {
     $('#second-week-result').text(`Seems like the weather Gods are unhappy`);
     var calenderSecondWeek = $('#secondWeekCalenderId');
@@ -241,8 +262,12 @@ function waterPlantOnWhichDay(arrayOfDate, arrayOfRainChances) {
     var firstDateOfSecondWeek;
     var lastDateOfSecondWeek;
     setTimeout(() => {
-      firstDateOfSecondWeek = secondWeek[0].replace(/-/g, '');
-      lastDateOfSecondWeek = secondWeek[6].replace(/-/g, '');
+      firstDateOfSecondWeek = moment(secondWeek[0], 'YYYY-MM-DD').format(
+        'YYYYMMDD'
+      );
+      lastDateOfSecondWeek = moment(secondWeek[6], 'YYYY-MM-DD').format(
+        'YYYYMMDD'
+      );
 
       var url = `https://calendar.google.com/calendar/r/eventedit?text=WATER+GARDEN+REMINDER&dates=${firstDateOfSecondWeek}T160000Z/${lastDateOfSecondWeek}T010000Z&location=HOME&sf=true`;
       calenderSecondWeek.attr('href', url);
@@ -299,5 +324,3 @@ function updatePage(response) {
     $('#news').append($articleList);
   }
 }
-
-

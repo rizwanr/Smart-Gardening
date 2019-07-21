@@ -6,364 +6,333 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Smart Gardening</title>
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous" />
 
 
 
   <!-- Link to Fontawesome Library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" />
 
   <!-- Link to google font -->
   <link href="https://fonts.googleapis.com/css?family=Muli|Quicksand&display=swap" rel="stylesheet">
-  
+
   <!-- Links to all Bootstrap libraries -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous">
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous">
   </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous">
   </script>
   <!-- Link to jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
+
   <!-- Link to Chartjs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css" />
 
+  <!-- Moment.js Reference -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <!-- Link to CSS -->
-  <link rel="stylesheet" href="./Assets/css/style.css" />
+  <!-- <link rel="stylesheet" href="./Assets/css/style.css" /> -->
 
 </head>
 
-<body >
+<body>
   <header id="masthead">
     <div class="container">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top">  <!-- navbar-expand-md means that for medium, small, and extra small screens, the navbars will become a toggle-able navbar. meaning that, it will be collapsed in those screen sizes -->
-            <a href="#" class="navbar-brand  mr-auto"> 
-              <!-- <i class="fab fa-envira"></i><i class="fab fa-envira"></i><i class="fab fa-envira"></i> -->
-              <img  class="img-fluid" src="Assets/images/logo2.jpg" >
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">   <!-- to hide the items from the navigation bar use collapse class -->
-                <div class="navbar-nav">
-                    <a href="" class="nav-item nav-link active">Home</a>
-                    <a href="#articles" class="nav-item nav-link">Articles</a>
-                    <a href="#about" class="nav-item nav-link">About</a>
-                    
-                </div>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <!-- navbar-expand-md means that for medium, small, and extra small screens, the navbars will become a toggle-able navbar. meaning that, it will be collapsed in those screen sizes -->
+        <a href="#" class="navbar-brand  mr-auto">
+          <!-- <i class="fab fa-envira"></i><i class="fab fa-envira"></i><i class="fab fa-envira"></i> -->
+          <img class="img-fluid" src="Assets/images/logo2.jpg">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!-- to hide the items from the navigation bar use collapse class -->
+          <div class="navbar-nav">
+            <a href="" class="nav-item nav-link active">Home</a>
+            <a href="#articles" class="nav-item nav-link">Articles</a>
+            <a href="#about" class="nav-item nav-link">About</a>
+
+          </div>
+        </div>
+      </nav>
     </div>
   </header>
 
-<!-- // first look -->
-      <div id="firstlook">
-          <p>Smart Gardening</p>
-          <a href="#information">Let's start</a>    
-      </div>
+  <!-- // first look -->
+  <div id="firstlook">
+    <p>Smart Gardening</p>
+    <a href="#information">Let's start</a>
+  </div>
 
-<div class="container mt-5 text-center" id="about">
-  <h2 class ="mb-4">ABOUT US</h2>
-  <div class="row">
-  <div class="col-md-4 p-3">
-    <img src="Assets/images/icons/water.png" alt="" class="img-fluid about-us-image d-none d-md-inline">
-    <h3>Lawn caring</h3>
-    <p class="lead">We are here to help you with the best plan to water your lawn. Our App works based on the information that you will provide
-    us!</p>
+  <div class="container mt-5 text-center" id="about">
+    <h2 class="mb-4">ABOUT US</h2>
+    <div class="row">
+      <div class="col-md-4 p-3">
+        <img src="Assets/images/icons/water.png" alt="" class="img-fluid about-us-image d-none d-md-inline">
+        <h3>Lawn caring</h3>
+        <p class="lead">We are here to help you with the best plan to water your lawn. Our App works based on the information that you will
+          provide us!
+        </p>
+      </div>
+      <div class="col-md-4 p-3">
+        <img src="Assets/images/icons/clouds.png" alt="" class="img-fluid about-us-image d-none d-md-inline">
+        <h3>Weather Forecast</h3>
+        <p class="lead">Weather can be unpredictable! Our website will show you the forecast (i.e. chance of rain) for the coming weeks based
+          on location on the map </p>
+      </div>
+      <div class="col-md-4 p-3">
+        <img src="Assets/images/icons/calender.png" alt="" class="img-fluid about-us-image d-none d-md-inline">
+        <h3 class="mt-2">Calender Reminder</h3>
+        <p class="lead">Let Smart App take the hassle out of setting reminders. Set a reminder to your Google Calender and you are sorted</p>
+      </div>
+    </div>
   </div>
-  <div class="col-md-4 p-3">
-      <img src="Assets/images/icons/clouds.png" alt="" class="img-fluid about-us-image d-none d-md-inline">
-    <h3>Weather Forecast</h3>
-    <p class="lead">Weather can be unpredictable! Our website will show you the forecast (i.e. chance of rain) for the coming weeks based on location on the map </p>
-  </div>
-  <div class="col-md-4 p-3">
-    <img src="Assets/images/icons/calender.png" alt="" class="img-fluid about-us-image d-none d-md-inline">
-    <h3>Calender Reminder</h3>
-    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam, neque voluptatibus repellendus esse quos quisquam
-      dignissimos placeat veritatis quaerat.</p>
-  </div>
-  </div>
-</div>
   <!-- Information Form-->
 
-      <div class="container mt-5" >
-          <h2 class="mb-4 text-center">INFORMATION</h2>
+  <div class="container mt-5">
+    <h2 class="mb-4 text-center" id="information">INFORMATION</h2>
+    <div class="row">
+
+      <div class="col-md-6 order-md-1">
+
+
+
+        <form class="needs-validation" validate>
+
+
+
+          <div class="mb-3">
+            <label for="address">Address
+            </label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="address2">Address 2 </span>
+            </label>
+            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" required>
+          </div>
+
           <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="zip">Zip</label>
+              <input type="text" class="form-control" id="zip" placeholder="L3Y0V9" required>
 
-    <div class="col-md-6 order-md-1" >
-              
-              
-                <form class="needs-validation" novalidate>
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <label for="firstName">First name</label>
-                      <input type="text" class="form-control" id="firstName" placeholder="" value="" required />
-                      <div class="invalid-feedback">
-                        Valid first name is required.
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <label for="lastName">Last name</label>
-                      <input type="text" class="form-control" id="lastName" placeholder="" value="" required />
-                      <div class="invalid-feedback">
-                        Valid last name is required.
-                      </div>
-                    </div>
-                  </div>
-      
-                  <div class="mb-3">
-                    <label for="email">Email <span class="text-muted">(Required)</span></label>
-                    <input type="email" class="form-control" id="email" placeholder="you@example.com" />
-                    <div class="invalid-feedback">
-                      Please enter a valid email address for shipping updates.
-                    </div>
-                  </div>
-      
-                  <div class="mb-3">
-                    <label for="address">Address <span class="text-muted">(Required)</span></label>
-                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required />
-                    <div class="invalid-feedback">
-                      Please enter your shipping address.
-                    </div>
-                  </div>
-      
-                  <div class="mb-3">
-                    <label for="address2">Address 2 </span></label>
-                    <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-                  </div>
-      
-                  <div class="row">
-                      <div class="col-md-4 mb-3">
-                          <label for="zip">Zip</label>
-                          <input type="text" class="form-control" id="zip" placeholder="L3Y0V9" required>
-                          <div class="invalid-feedback">
-                            Zip code required.
-                          </div>
-                      </div> 
-      
-                      <div class="col-md-4 mb-3">
-                          <label for="city">City</label>
-                          <input type="text" class="form-control" id="city" placeholder="Toronto" required />
-                          <div class="invalid-feedback">
-                            City code required.
-                          </div>
-                      </div>
-      
-                      <div class="col-md-4 mb-3 ">
-                        <label for="country">Country</label>
-                        <input type="text" class="form-control" id="country" placeholder="Canada" required />
-                        <div class="invalid-feedback">
-                          country code required.
-                        </div>
-                      </div>
-                       
-                      <button class="weather-button btn btn-primary mr-3 ml-3" type="submit" id="run-search">Submit</button>
-                    
-      
-                      <button class="weather-button btn btn-primary " id="clear-all">Clear</button>
-                      
-                    </div>
-                  </form>
-                </div>
-                    <div class="col-md-6 order-md-2 .d-flex">
-                      <!--Google map-->
-                      <div id="map" </div>
-                      </div>
-                    
-                    </div>
-                  </div>
-                  </div
-              
-             
-         
-        
-        
-      
+            </div>
 
-  
-        <!-- Empty Div for Weather Forecast Result Panel -->
+            <div class="col-md-4 mb-3">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" placeholder="Toronto" required />
+            </div>
 
+            <div class="col-md-4 mb-3 ">
+              <label for="country">Country</label>
+              <input type="text" class="form-control" id="country" placeholder="Canada" required />
+            </div>
 
-        <div class="container">
+            <input class="weather-button btn btn-primary mr-3 ml-3" type="submit" value="Submit" id="run-search">
 
+        <input class="weather-button btn btn-primary " id="clear-all" type="reset" value ="Clear"></button>
 
-          <div class="row mb-5 mt-5" style="display: none" id="chart">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header"  id="results">
-        <strong> Chances of Rain</strong>
+          </div>
+        </form>
       </div>
-
-      <div class="card-body" id="forecast-section">
-        <!--add canvas -->
-        <canvas id="myChart" width="400" height="250"></canvas>
-      </div>
-    </div>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary week-button " style="width:47%" data-toggle="modal" data-target="#firstWeekModal">
-      Week 1
-    </button>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary week-button" style="width:47%; float:right" data-toggle="modal" data-target="#secondWeekModal">
-      Week 2
-    </button>
-  </div>
-</div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="firstWeekModal" tabindex="-1" role="dialog" aria-labelledby="firstWeekModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="firstWeekModalLabel">First Week</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p id="first-week-result"></p>
-        <a class="js-add-to-calendar-modal js-d-dialog-trigger" data-automation="add-to-calendar" role="button" aria-haspopup="true"
-          data-xd-wired="dialog-trigger" style="display: none" id="firstWeekCalenderId">Add to Google Calendar</a>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="secondWeekModal" tabindex="-1" role="dialog" aria-labelledby="secondWeekModalModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="secondWeekModalModalLabel">Second Week</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p id="second-week-result"></p>
-        <a class="js-add-to-calendar-modal js-d-dialog-trigger" data-automation="add-to-calendar" role="button" aria-haspopup="true"
-          data-xd-wired="dialog-trigger" style="display: none" id="secondWeekCalenderId">Add to Google Calendar</a>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-        <div class="row  mt-5 pl-3" >
-          <table class="table mt-5 " >
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Forecast Terminology</th>
-                <th scope="col">PoP</th>
-                <th scope="col">Precipitation's Areal Coverage</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>--</td>
-                <td>Less than 20%</td>
-                <td>Drizzle, sprinkle (flurries)</td>
-              </tr>
-              <tr>
-                <td>Slight chance</td>
-                <td>20%</td>
-                <td>Isolated</td>
-              </tr>
-              <tr>
-                <td>Chance</td>
-                <td>30-50%</td>
-                <td>Scattered</td>
-              </tr>
-              <tr>
-                <td>Likely</td>
-                <td>30-50%</td>
-                <td>Numerous</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="col-md-6 order-md-2 ">
+        <!--Google map-->
+        <div id="map" class="mt-3">
         </div>
 
-<!-- Article section -->
-<section id="articles">
-    <div class="container text-center mt-5 mb-5" >
-        <h3>RELATED ARTICLES WHILE YOU ARE HERE</h3>
-        <div  id ="new-article">
-          <ul class="list-group list-group-horizontal row" id="news">
-      
-            </ul>
+      </div>
+    </div>
+  </div <!-- Empty Div for Weather Forecast Result Panel -->
+
+
+  <div class="container">
+
+
+    <div class="row mb-5 mt-5" style="display: none" id="chart">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header" id="results">
+            <strong> Chances of Rain</strong>
+          </div>
+
+          <div class="card-body" id="forecast-section">
+            <!--add canvas -->
+            <canvas id="myChart" width="400" height="250"></canvas>
           </div>
         </div>
-</section>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary week-button " style="width:47%" data-toggle="modal" data-target="#firstWeekModal">
+          Week 1
+        </button>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary week-button" style="width:47%; float:right" data-toggle="modal" data-target="#secondWeekModal">
+          Week 2
+        </button>
+      </div>
+    </div>
+  </div>
 
-</div>
-</div>
-<div id ="quotes" class="mt-5 ">
-  <div class="container text-center mt-5">
-<h3 class="mb-5">WHAT OUR HAPPY CUSTOMERS ARE SAYING</h3>
-<div class="row">
-  <div class="col-md-4 my-2">
-<i class="fas fa-quote-left fa-2x text-primary "> </i>
-      <blockquote class='blockquote'>
-        <p class="mb-3">Smart Gardening has taken care of the hassles realated to watering lawns</p>
-        <footer class="blockquote-footer">Aditi</footer>
-      </blockquote>
+  <!-- Modal -->
+  <div class="modal fade" id="firstWeekModal" tabindex="-1" role="dialog" aria-labelledby="firstWeekModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="firstWeekModalLabel">First Week</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="first-week-result"></p>
+          <a class="js-add-to-calendar-modal js-d-dialog-trigger" data-automation="add-to-calendar" role="button" aria-haspopup="true"
+            data-xd-wired="dialog-trigger" style="display: none" id="firstWeekCalenderId">Add to Google Calendar</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="secondWeekModal" tabindex="-1" role="dialog" aria-labelledby="secondWeekModalModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="secondWeekModalModalLabel">Second Week</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="second-week-result"></p>
+          <a class="js-add-to-calendar-modal js-d-dialog-trigger" data-automation="add-to-calendar" role="button" aria-haspopup="true"
+            data-xd-wired="dialog-trigger" style="display: none" id="secondWeekCalenderId">Add to Google Calendar</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row  mt-5  pl-3">
+      <table class="table mt-5 ">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Forecast Terminology</th>
+            <th scope="col">PoP</th>
+            <th scope="col">Precipitation's Areal Coverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>--</td>
+            <td>Less than 20%</td>
+            <td>Drizzle, sprinkle (flurries)</td>
+          </tr>
+          <tr>
+            <td>Slight chance</td>
+            <td>20%</td>
+            <td>Isolated</td>
+          </tr>
+          <tr>
+            <td>Chance</td>
+            <td>30-50%</td>
+            <td>Scattered</td>
+          </tr>
+          <tr>
+            <td>Likely</td>
+            <td>30-50%</td>
+            <td>Numerous</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Article section -->
+  <section id="articles">
+    <div class="container text-center mb-5">
+      <h3 class="mt-5">RELATED ARTICLES WHILE YOU ARE HERE</h3>
+      <div id="new-article">
+        <ul class="list-group list-group-horizontal row" id="news">
+
+        </ul>
+      </div>
+    </div>
+  </section>
 
   </div>
-<div class="col-md-4 my-2">
-<i class="fas fa-quote-left fa-2x text-primary "> </i>
-    <blockquote class='blockquote'>
-      <p class="mb-3">I use Smart Gardening for setting reminders on my calender  </p>
-      <footer class="blockquote-footer">Richard</footer>
-    </blockquote>
-
-</div>
-<div class="col-md-4 my-2">
-<i class="fas fa-quote-left fa-2x text-primary "> </i>
-    <blockquote class='blockquote'>
-      <p class="mb-3">For what it's worth,I have been using Smart Gardening for a while and I am satisfied with the predictions it makes</p>
-      <footer class="blockquote-footer">John</footer>
-    </blockquote>
-
-</div>
-</div>
   </div>
-</div>
+  <div id="quotes" class="mt-5 ">
+    <div class="container text-center mt-5">
+      <h3 class="mb-5">WHAT OUR HAPPY CUSTOMERS ARE SAYING</h3>
+      <div class="row">
+        <div class="col-md-4 my-2">
+          <i class="fas fa-quote-left fa-2x text-primary "> </i>
+          <blockquote class='blockquote'>
+            <p class="mb-3">Smart Gardening has taken care of the hassles realated to watering lawns</p>
+            <footer class="blockquote-footer">Aditi</footer>
+          </blockquote>
+
+        </div>
+        <div class="col-md-4 my-2">
+          <i class="fas fa-quote-left fa-2x text-primary "> </i>
+          <blockquote class='blockquote'>
+            <p class="mb-3">I use Smart Gardening for setting reminders on my calender </p>
+            <footer class="blockquote-footer">Richard</footer>
+          </blockquote>
+
+        </div>
+        <div class="col-md-4 my-2">
+          <i class="fas fa-quote-left fa-2x text-primary "> </i>
+          <blockquote class='blockquote'>
+            <p class="mb-3">For what it's worth,I have been using Smart Gardening for a while and I am satisfied with the predictions it
+              makes
+            </p>
+            <footer class="blockquote-footer">John</footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-<div class="bg-dark mt-3">
+  <div class="bg-dark mt-3">
     <div class="container text-white text-center py-5">
-      <p class ="lead">JOIN OUR NEWSLETTER FOR MORE APPLICATION</p>
-     <div class="row justify-content-center">
-      <div class="col-10 col-sm-8 col-md-6 col-lg-4">
-        <form action="" class="form-inline" >
-    <div class="input-group">
-    <input type="text" class="form-control valid" placeholder="Your Email">
-    <div class="input-group-append">
-      <button class="btn btn-primary">Join Now</button>
-    </div>
-    </div>
-     </form>
-    </div> 
-    </div>
+      <p class="lead">JOIN OUR NEWSLETTER FOR MORE APPLICATION</p>
+      <div class="row justify-content-center">
+        <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+          <form action="" class="form-inline">
+            <div class="input-group">
+              <input type="text" class="form-control valid" placeholder="Your Email">
+              <div class="input-group-append">
+                <button class="btn btn-primary">Join Now</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
   <div id="footer" class="bg-secondary p-3">
@@ -380,13 +349,11 @@
     </ul>
 
   </div>
-      <!-- Link to google map api -->
-      <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm2fr000GAejpxrGoz6ySrEdWSVlhubfY&callback=initMap">
-      </script>
-      <!-- Link to Javascript file -->
-      <script src="Assets/js/logic.js"></script>
+  <!-- Link to google map api -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm2fr000GAejpxrGoz6ySrEdWSVlhubfY&callback=initMap">
+  </script>
+  <!-- Link to Javascript file -->
+  <script src="Assets/js/logic.js"></script>
 </body>
 
 </html>
-
