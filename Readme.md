@@ -1,4 +1,5 @@
-#Smart Gardening App:
+# Smart Gardening App:
+
 Target audience: Homeowners
 Solution: Provide the homeowners the best time to water their lawns
 Issues to consider:  
