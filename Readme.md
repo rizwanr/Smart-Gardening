@@ -14,3 +14,4 @@ The app will present the weather data, the best time for water the lawn and the 
 Project screenshot:
 ![Screenshot](screenshot.jpg)
 
+Link to Project 1: https://rizwanr.github.io/Smart-Gardening/
